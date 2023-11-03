@@ -1,0 +1,28 @@
+import itertools
+def calculate_total_distance(path, cities):
+    total_distance = 0
+    for i in range(len(path) - 1):
+        city1, city2 = path[i], path[i + 1]
+        total_distance += cities[city1][city2]
+    return total_distance
+def traveling_salesman(cities):
+    num_cities = len(cities)
+    city_indices = list(range(num_cities))
+    shortest_path = None
+    shortest_distance = float('inf')
+    for path in itertools.permutations(city_indices):
+        distance = calculate_total_distance(path, cities)
+        if distance < shortest_distance:
+            shortest_distance = distance
+            shortest_path = path
+    return shortest_path, shortest_distance
+if __name__ == "__main__":
+    cities = [
+        [0, 29, 20, 21],
+        [29, 0, 15, 12],
+        [20, 15, 0, 25],
+        [21, 12, 25, 0]
+    ]
+    shortest_path, shortest_distance = traveling_salesman(cities)
+    print("Shortest Path:", shortest_path)
+    print("Shortest Distance:", shortest_distance)
