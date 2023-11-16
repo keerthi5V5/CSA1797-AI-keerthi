@@ -1,0 +1,26 @@
+symptom(amit,fever).
+symptom(amit,cold).
+symptom(amit,rash).
+symptom(amit,headache).
+symptom(amit,runn_nose).
+symptom(kaushal,chills).
+symptom(kaushal,fever).
+symptom(kaushal,hedache).
+symptom(dipen,runny_nose).
+symptom(dipen,rash).
+symptom(dipen,flu).
+hypothesis(Patient,measels):-
+symptom(Patient,fever),
+symptom(Patient,cold),
+symptom(Patient,rash),
+write('Eat Salad').
+hypothesis(Patient,german_measles) :-
+symptom(Patient,fever),
+symptom(Patient,headache),
+symptom(Patient,runny_nose),
+symptom(Patient,rash),
+write('Avoid Junk Food').
+hypothesis(Patient,flu) :-
+symptom(Patient,fever),
+symptom(Patient,headache),
+write('Avoid Cold Food').
