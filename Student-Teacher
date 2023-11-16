@@ -1,0 +1,5 @@
+takes(smitha,csa17).
+takes(selvi,csa11).
+takes(duraichi,csa12).
+takes(shannu,uba04).
+classmates(X,Y):-takes(X,Z),takes(Y,Z).
