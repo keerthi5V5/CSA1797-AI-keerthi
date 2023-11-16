@@ -1,0 +1,12 @@
+edge(a,b).
+edge(a,c).
+edge(b,d).
+edge(b,c).
+edge(c,f).
+edge(c,g).
+bfs(S,G):-bfsq([S],G).
+bfs([G|_],G).
+bfsq([C|Rs],G):-
+    findall(N,edge(C,N),Ns),
+    append(Rs,Ns,Q),
+    bfsq(Q,G).
