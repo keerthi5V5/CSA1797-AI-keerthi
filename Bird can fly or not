@@ -1,0 +1,8 @@
+bird(crow).
+bird(owl).
+bird(parrot).
+bird(duck).
+bird(hen).
+bird(kingfisher).
+can_fly(X):-bird(X).
+can_fly(ostrich):-fail.
