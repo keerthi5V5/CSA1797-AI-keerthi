@@ -1,0 +1,9 @@
+orbit(mercury,sun).
+orbit(venus,sun).
+orbit(earth,sun).
+orbit(mars,sun).
+orbit(moon,earth).
+orbit(phobos,mars).
+orbit(deimos,mars).
+planet(p):-orbit(p,sun).
+satellite(s):-orbit(s,p),planet(p).
