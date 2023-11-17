@@ -1,0 +1,10 @@
+american(robert).
+
+enemy(country_a,american).
+
+has_missiles(country_a).
+
+criminal(X):-american(X),sells_weapons(X,Y),enemy(Y,american).
+
+sells_weapons(X,Y):-american(X),has_missiles(Y).
+
